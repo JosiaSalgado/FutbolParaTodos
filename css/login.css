@@ -1,0 +1,45 @@
+*{  
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body{
+    background-image: url(../img/register_wallpaper.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100vw 100vh;
+}
+
+
+.row{
+    height: 100vh;
+}
+
+.form{
+    height: 23rem;
+    width: 40rem;
+    background-color: rgb(243, 243, 243);
+    border-radius: 6px;
+    box-shadow: 10px 20px 10px rgb(119, 119, 119);
+
+}
+
+.col{
+    display: flex;
+    justify-content: center;
+}
+
+#nameMessage{
+    /* display: none; */
+    color: #f3f3f3;
+}
+
+#register a {
+    text-decoration: none;
+    font-size: .9rem;
+}
+
+#passMessage{
+    display: none;
+}

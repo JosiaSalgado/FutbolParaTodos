@@ -1,0 +1,20 @@
+body{
+    /* background-color: #b1d3ff; */
+    background-image: url(../img/register_wallpaper.jpg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100vw 100vh;
+}
+
+.box{
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    box-shadow: 10px 20px 10px rgb(119, 119, 119);
+    margin: 2rem 0 2rem 0;
+}
+
+.row-1{
+    height: 100vh;
+    
+}
