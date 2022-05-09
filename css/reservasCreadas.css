@@ -1,0 +1,19 @@
+.reservaBox{
+    height: 20vh;
+    background-color: rgb(238, 238, 238);
+}
+
+.aceptar{
+    
+    font-size: 2rem;
+    width: 5rem;
+}
+
+.rechazar{
+    font-size: 2rem;
+    width: 5rem;
+}
+
+.none{
+    display: none;
+}
