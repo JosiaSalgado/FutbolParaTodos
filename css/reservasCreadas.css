@@ -6,14 +6,22 @@
 .aceptar{
     
     font-size: 2rem;
-    width: 5rem;
+    width: 3rem;
 }
 
 .rechazar{
     font-size: 2rem;
-    width: 5rem;
+    width: 3rem;
 }
 
 .none{
     display: none;
+}
+
+.datos{
+    font-size: 5px;
+}
+
+.infoArriendo{
+    height: 25vh;
 }

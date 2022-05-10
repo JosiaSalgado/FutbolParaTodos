@@ -52,35 +52,37 @@
                     <?php
                     $inc = include("../../php/db.php");
                     if($inc){
-                        $consulta = "SELECT * FROM reservas";
+                        $consulta = "SELECT * FROM reservascreadas";
                         $resultado = mysqli_query($conexion,$consulta);
                         if($resultado){
                             while($row = $resultado->fetch_array()){
-                                $cancha = $row['numero_cancha'];
+                                $cancha = $row['cancha'];
                                 $fecha = $row['fecha'];
                                 $hora = $row['hora'];
                                 $nombre = $row['nombre'];
                                 $telefono = $row['telefono'];
                                 $direccion = $row['direccion'];
+                                $correo = $row['correo'];
                                 ?> 
 
-                                <div class="col-12 mt-3 reservaBox border border-warning d-flex">
-                        <div class="numeroCancha col-2 border-end d-flex align-items-center">
+                    <div class="col-12 mt-3 reservaBox border border-warning d-flex">
+                        <div class="numeroCancha col-2 border-end d-flex align-items-center ">
                             <h3 class='text-center'>Numero de cancha: <?php echo $cancha ?></h3>
                         </div>
 
-                        <div class="infoArriendo col-4 d-flex flex-column justify-content-center">
+                        <div class="infoArriendo col-4 d-flex flex-column justify-content-center ">
                             <h3 class="ms-3 pt-2"><?php echo $fecha ?></h3>
                             <p class="ms-4 fs-5"><?php echo $hora ?></p>
                         </div>
 
                         <div class="infoArriendo col-4 d-flex flex-column justify-content-center">
-                            <h4 class="py-1 m-0"><strong>Nombre:</strong> <?php echo $nombre ?></h4>
-                            <p class="fs-5 py-1 m-0"><strong>Telefono:</strong> <?php echo $telefono ?></p>
-                            <p class="fs-5"><strong>Direccion:</strong> <?php echo $direccion ?></p>
+                            <h4 class="fs-5 py-1 m-0 p-0"><strong>Nombre:</strong> <?php echo $nombre ?></h4>
+                            <p class="m-0 py-1 datos"><strong>Telefono:</strong> <?php echo $telefono ?></p>
+                            <p class="m-0 py-1 datos"><strong>Direccion:</strong> <?php echo $direccion ?></p>
+                            <p class="m-0 py-1 datos"><strong>Correo:</strong> <?php echo $correo ?></p>
                         </div>
 
-                        <div class="botones col-2 align-items-center d-flex">
+                        <div class="botones col-2 align-items-center d-flex ">
                             <button class="btn btn-success me-3 aceptar"><i class="bi bi-check-lg"></i></button>
                             <button class="btn btn-danger rechazar" ><i class="bi bi-x-lg"></i></button>
                         </div>

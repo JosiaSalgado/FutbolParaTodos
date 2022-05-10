@@ -1,3 +1,7 @@
+<?php
+                        include("../../php/clientes/reservas.php");
+                    ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -82,29 +86,35 @@
                 <div class="col">
                     <h1 class="text-center mb-4">Complete el fromulario para realizar la reserva</h1>
 
-                    <form action="#" class="">
+                    <form action="../../php/clientes/reservas.php" method='post'>
                         <div class="mb-4">
                             <label for="nombre" class="form-label">Nombre Completo</label>
-                            <input type="text" class="form-control" id="nombre" required
+                            <input type="text" name="nombre" class="form-control" id="nombre" required
                                 placeholder="Ingrese su nombre aqui...">
                         </div>
 
 
                         <div class="mb-4">
                             <label for="correo" class="form-label">Correo Electronico</label>
-                            <input type="email" class="form-control" id="correo" required
+                            <input type="email" class="form-control" id="correo" name="correo" required
                                 placeholder="Ejemplo: nombre@organizacion.com">
                         </div>
 
                         <div class="mb-4">
                             <label for="telefono" class="form-label">Numero de telefono</label>
-                            <input type="text" class="form-control" id="telefono" required
+                            <input type="text" name="numero" class="form-control" id="telefono" required
                                 placeholder="Ejemplo: 9 1234 5678">
                         </div>
 
                         <div class="mb-4">
+                            <label for="direccion" class="form-label">Direccion</label>
+                            <input type="text" name="direccion" class="form-control" id="direccion" required
+                                placeholder="Ejemplo: Colon #4340">
+                        </div>
+
+                        <div class="mb-4">
                             <label for="cancha" class="form-label">Seleccione N° de cancha</label>
-                            <select name="" id="cancha" class="w-100 py-2" required>
+                            <select name="numero_cancha" id="cancha" class="w-100 py-2" required>
                                 <option value="" selected disabled>--Seleccione Aqui--</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -122,32 +132,32 @@
                         
                         <div class="mb-4">
                             <label for="fecha" class="form-label">Seleccione la fecha deseada</label>
-                            <input type="date" class="form-control" id="fecha" required>       
+                            <input type="date" name="fecha" class="form-control" id="fecha" required>       
                         </div>
 
 
                         <div class="mb-4">
                             <label for="hora" class="form-label">Seleccione la hora deseada (Hora de Chile)</label>
-                            <select name="" id="hora" class="w-100 py-2" required>
+                            <select name="hora" id="hora" class="w-100 py-2" required>
                                 <option value="" selected dir="">--Seleccione Aqui--</option>
-                                <option value="5">17:00</option>
-                                <option value="6">18:00</option>
-                                <option value="7">19:00</option>
-                                <option value="8">20:00</option>
-                                <option value="9">21:00</option>
-                                <option value="10">22:00</option>
-                                <option value="11">23:00</option>
-                         
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                                <option value="19:00">19:00</option>
+                                <option value="20:00">20:00</option>
+                                <option value="21:00">21:00</option>
+                                <option value="22:00">22:00</option>
+                                <option value="23:00">23:00</option>
                             </select>
                         </div>
 
 
                         <div class="botones">
-                            <a type="submit" class="btn btn-outline-primary me-2" href="../datosBancarios.html">Reservar</button>
+                        <input type="submit" name='aceptar' class="btn btn-outline-primary me-2"></input>
 
-                            <a class="btn btn-outline-danger" href="">Cancelar</a>
+                        <button class="btn btn-outline-danger" href="">Cancelar</button>
                         </div>
                     </form>
+                   
                 </div>
             </div>
         </div>
