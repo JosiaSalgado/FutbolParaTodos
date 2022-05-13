@@ -6,12 +6,12 @@
 .aceptar{
     
     font-size: 2rem;
-    width: 3rem;
+    width: 4.1rem ; 
 }
 
 .rechazar{
     font-size: 2rem;
-    width: 3rem;
+    width: 4.1rem ;
 }
 
 .none{
@@ -19,9 +19,17 @@
 }
 
 .datos{
-    font-size: 5px;
+    font-size: 1.3rem;
 }
 
 .infoArriendo{
     height: 25vh;
+}
+
+#canchaSlc{
+    width: 100%;
+}
+
+#horaSlc{
+    width: 100%;
 }

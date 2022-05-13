@@ -42,13 +42,44 @@
                 </div>
 
                 <!-- filtros -->
-                <div class="col-12 border border-dark bg-info mt-1 text-center d-flex justify-content-center align-items-center"
+                <div class="formulario col-12 border border-dark bg-info d-flex justify-content-evenly align-items-center"
                     style="height: 10vh;">
-                    <h1>>>Filtros que organizaran las reservas<<< /h1>
+
+                    <div class="col-5">
+                        <label for="canchaSlc" class="text-light"><strong>Numero de cancha</strong></label>
+                        <select id="canchaSlc">
+                            <option value="" disabled selected>Seleccione</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+
+                    <div class="col-5">
+                        <label for="horaScl" class="text-light"><strong>Horario</strong></label>
+                        <select id="horaSlc">
+                            <option value="" disabled selected>Seleccione</option>
+                            <option value="17">17:00</option>
+                            <option value="18">18:00</option>
+                            <option value="19">19:00</option>
+                            <option value="20">20:00</option>
+                            <option value="21">21:00</option>
+                            <option value="22">22:00</option>
+                            <option value="23">23:00</option>
+                        </select>
+                    </div>
+
                 </div>
 
                 <!-- Lista de Reservas -->
-                <div class="container container-reservas">     
+                <div class="container container-reservas">
                     <?php
                     $inc = include("../../php/db.php");
                     if($inc){
@@ -63,31 +94,37 @@
                                 $telefono = $row['telefono'];
                                 $direccion = $row['direccion'];
                                 $correo = $row['correo'];
-                                ?> 
+                                ?>
 
-                    <div class="col-12 mt-3 reservaBox border border-warning d-flex">
+                    <div class="col-12 mt-3 reservaBox border border-warning d-flex d-none">
                         <div class="numeroCancha col-2 border-end d-flex align-items-center ">
-                            <h3 class='text-center'>Numero de cancha: <?php echo $cancha ?></h3>
-                        </div>
-
-                        <div class="infoArriendo col-4 d-flex flex-column justify-content-center ">
-                            <h3 class="ms-3 pt-2"><?php echo $fecha ?></h3>
-                            <p class="ms-4 fs-5"><?php echo $hora ?></p>
+                            <h3 class='text-center cancha'>Numero de cancha: <span><?php echo $cancha?></span></h3>
                         </div>
 
                         <div class="infoArriendo col-4 d-flex flex-column justify-content-center">
-                            <h4 class="fs-5 py-1 m-0 p-0"><strong>Nombre:</strong> <?php echo $nombre ?></h4>
-                            <p class="m-0 py-1 datos"><strong>Telefono:</strong> <?php echo $telefono ?></p>
-                            <p class="m-0 py-1 datos"><strong>Direccion:</strong> <?php echo $direccion ?></p>
-                            <p class="m-0 py-1 datos"><strong>Correo:</strong> <?php echo $correo ?></p>
+                            <h3 class="ms-3 fecha">
+                               <span><?php echo $fecha ?></span>
+                            </h3>
+                            <p class="ms-4 fs-5 mb-3 hora">
+                                <span><?php echo $hora?></span>
+                            </p>
+                        </div>
+
+                        <div class="infoArriendo col-4">
+                            <div class='mt-3'>
+                                <h4 class="py-1 mt-1 mb-0 p-0 nombre"><strong>Nombre: </strong><span><?php echo $nombre?></span></h4>
+                                <p class="m-0 py-1 datos telefono"><strong>Telefono: </strong><span><?php echo $telefono?></span></p>
+                                <p class="m-0 py-1 datos direccion"><strong>Direccion: </strong><span><?php echo $direccion?></span></p>
+                                <p class="m-0 py-1 datos correo "><strong>Correo: </strong><span><?php echo $correo?></span></p>
+                            </div>
                         </div>
 
                         <div class="botones col-2 align-items-center d-flex ">
                             <button class="btn btn-success me-3 aceptar"><i class="bi bi-check-lg"></i></button>
-                            <button class="btn btn-danger rechazar" ><i class="bi bi-x-lg"></i></button>
+                            <button class="btn btn-danger rechazar"><i class="bi bi-x-lg"></i></button>
                         </div>
                     </div>
-                               <?php
+                    <?php
                             }
                         }
                     }

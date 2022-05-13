@@ -18,41 +18,38 @@
                 <div class="col-12 col-lg-6 box p-4">
                     <h1 class="text-center">Cree su cuenta de usuario</h1>
 
-                    <form action="#" class="row">
+                    <form action="../../php/clientes/registrarUsuarios.php" method='POST' class="row">
                         <div class="mb-4">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" required placeholder="Ingrese su nombre aqui...">
-                        </div>
-
-                        <div class="mb-4">
-                            <label for="apellido" class="form-label">Apellido</label>
-                            <input type="text" class="form-control" id="apellido" required placeholder="Ingrese su apellido aqui...">
+                            <label for="nombre" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="nombre" name='nombre' required placeholder="Ingrese su nombre aqui...">
                         </div>
 
                         <div class="mb-4">
                             <label for="pass" class="form-label">Fecha de nacimineto</label>
-                            <input type="date" class="form-control" id="pass" required  min="1920-01-01">
+                            <input type="date" class="form-control" name='nacimiento' id="pass" required  min="1920-01-01">
                         </div>
 
                         <div class="mb-4">
                             <label for="correo" class="form-label">Correo Electronico</label>
-                            <input type="email" class="form-control" id="correo" required placeholder="Ejemplo: nombre@organizacion.com">
+                            <input type="email" class="form-control" name='correo' id="correo" required placeholder="Ejemplo: nombre@organizacion.com">
                         </div>
 
                         <div class="mb-4">
                             <label for="telefono" class="form-label">Numero de telefono</label>
-                            <input type="text" class="form-control" id="telefono" required placeholder="Ejemplo: 9 1234 5678">
+                            <input type="text" class="form-control" name='telefono' id="telefono" required placeholder="Ejemplo: 9 1234 5678">
                         </div>
 
                         <div class="mb-4">
                             <label for="pass" class="form-label">Contraseña</label>
-                            <input type="text" class="form-control" id="pass" required placeholder="Eliga una contraseña e ingresela aqui...">
+                            <input type="text" class="form-control" name='password' id="pass" required placeholder="Cree una contraseña e ingresela aqui...">
                         </div>
 
                         <div class="botones">
-                            <button type="submit" class="btn btn-success">Crear cuenta</button>
+                            <input type="submit" class="btn btn-success" name='aceptar'></input>
 
-                            <a class="btn btn-danger" href="./login.html">Cancelar</a>
+                            <a class="btn btn-danger" href="./login.php">Cancelar</a>
+
+                           
                         </div>
                     </form>
                 </div>

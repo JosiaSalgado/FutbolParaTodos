@@ -16,19 +16,19 @@
             <div class="col">
                 <div class="form">
 
-                    <form action="../php/validarLogin.php" method="post" class="p-3">
+                    <form action="../../php/clientes/validarLogin.php" method="post" class="p-3">
                         <h1 class="text-center">BIENVENIDO</h1>
 
                         <div class="px-3">
-                            <label for="name" class="form-label">Nombre de usuario</label>
+                            <label for="name" class="form-label">Correo</label>
                             <input type="text" class="form-control" id="name" name="usuario"
-                                placeholder="Escriba su nombre de usuario..." required>
+                                placeholder="Escriba su Correo aqui..." required>
 
                             <div class="mensajes d-flex justify-content-between">
 
                                 <p class="ms-1 mb-0  d-block" id="nameMessage">Rellene la casilla</p>  
 
-                                <p class="text-end" id="register"><a href='register.html'>¿Aun no tienes cuenta? Registrate aqui</a></p>
+                                <p class="text-end" id="register"><a href='register.php'>¿Aun no tienes cuenta? Registrate aqui</a></p>
                             </div>
                         </div>
 
@@ -46,7 +46,7 @@
                             </div>
 
                         </div>
-
+                        
                     </form>
                 </div>
             </div>

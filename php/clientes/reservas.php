@@ -11,12 +11,12 @@ if(isset($_POST['aceptar'])){
     $hora = trim($_POST['hora']);
     $direccion = trim($_POST['direccion']);
 
-    $consulta = "INSERT INTO `reservascreadas`(`nombre`, `telefono`, `direccion`, `correo`, `cancha`, `fecha`, `hora`, `id`, `estado`) VALUES ('$nombre','$numero','$direccion','$correo','$cancha','$fecha','$hora','','0')";
+    $sql = "INSERT INTO `reservascreadas`(`nombre`, `telefono`, `direccion`, `correo`, `cancha`, `fecha`, `hora`, `id`, `estado`) VALUES ('$nombre','$numero','$direccion','$correo','$cancha','$fecha','$hora','','0')";
 
-    $resultado = mysqli_query($conexion,$consulta);
+    $resultado = mysqli_query($conexion, $sql);
 
     if($resultado){
-       include("../../vistas/Cliente/datosBancarios.html");
+       header("location: ../../vistas/Cliente/datosBancarios.html");
     }
 }
 ?>
