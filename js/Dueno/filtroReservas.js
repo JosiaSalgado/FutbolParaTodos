@@ -141,8 +141,8 @@ function imprimirHTML(e) {
         </div>
 
         <div class="botones col-2 align-items-center d-flex ">
-        <button href="../../php/trabajadores/aceptarReserva.php?id=${x.id}" class="btn btn-success me-3 aceptar"><i class="bi bi-check-lg"></i></button>
-        <button href="../../php/trabajadores/eliminarReserva.php?id=${x.id}" class="btn btn-danger rechazar"><i class="bi bi-x-lg"></i></button>
+        <a href="../../php/Dueno/aceptarReserva.php?id=${x.id}" class="btn btn-success me-3 aceptar"><i class="bi bi-check-lg"></i></a>
+        <a href="../../php/Dueno/eliminarReserva.php?id=${x.id}" class="btn btn-danger rechazar"><i class="bi bi-x-lg"></i></a>
         </div>
     </div>
         `;

@@ -23,24 +23,30 @@
                 <div class="col-12">
                     <ul class="nav nav-tabs mt-3 fs-5">
                         <li class="nav-item pe-3">
-                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                            <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
                         </li>
 
                         <li class="nav-item pe-3">
-                            <a class="nav-link fw-bold" href="reservasCreadas.html">Reservas Creadas</a>
+                            <a class="nav-link fw-bold" href="reservasCreadas.php">Reservas Creadas</a>
                         </li>
 
                         <li class="nav-item pe-3">
-                            <a class="nav-link  fw-bold" href="reservasConfirmadas.html">Reservas Confirmadas</a>
+                            <a class="nav-link  fw-bold" href="reservasConfirmadas.php">Reservas Confirmadas</a>
                         </li>
 
                         <li class="nav-item pe-3">
-                            <a class="nav-link fw-bold" href="ReservasRechazadas.html">Reservas Rechazadas</a>
+                            <a class="nav-link fw-bold" href="ReservasRechazadas.php">Reservas Rechazadas</a>
                         </li>
 
                         <li class="nav-item pe-3">
-                            <a class="nav-link fw-bold" href="historialReservas.html">Historial de Reservas</a>
+                            <a class="nav-link fw-bold" href="historialReservas.php">Historial de Reservas</a>
                         </li>
+
+                        <li class="nav-item pe-3">
+                            <a class="nav-link fw-bold active" href="administrarTrabajadores.php">Administrar Trabajadores</a>
+                        </li>
+
+                        
 
                     </ul>
                 </div>
