@@ -2,6 +2,12 @@ let reservas = document.querySelector('.container-reservas');
 let reserva = document.querySelectorAll('.reservaBox');
 let canchaSlc = document.querySelector('#canchaSlc');
 let horaSlc = document.querySelector('#horaSlc');
+let fechaSlc = document.querySelector('#fechaSlc');
+let objeto = {
+    numero: '',
+    hora: '',
+    fecha: ''
+}
 let listaReserva = [];
 
 
@@ -10,60 +16,77 @@ let listaReserva = [];
 listeners();
 guardarReservas();
 
-let objeto = {
-    numero: '',
-    hora: ''
-}
-
-
-
-
-
-
-
 
 
 //Funciones 
 
-
 function listeners() {
-    reservas.addEventListener('click', leerInfo);
 
     canchaSlc.addEventListener('change', e => {
         objeto.numero = e.target.value;
         filtrar();
-        console.log(objeto);
     })
 
 
     horaSlc.addEventListener('change', e => {
         objeto.hora = e.target.value;
-        console.log(objeto);
+        filtrar();
+    })
+
+    fechaSlc.addEventListener('change', e => {
+        // let date = new Date()
+        // let today = date.getFullYear()+'-'+0+(date.getMonth()+1)+'-'+date.getDate();
+        objeto.fecha = e.target.value;
+        filtrar();
     })
 
 }
 
 //borrar reservas
-function leerInfo(e) {
-    console.log(e.target);
-    if (e.target.classList.contains('btn-success')) {
-        let reserva = e.target.parentElement.parentElement;
-        borrarReserva(reserva);
+// function leerInfo(e) {
+//     if (e.target.classList.contains('btn-success')) {
+//         let reserva = e.target.parentElement.parentElement;   
+//         // borrarReserva(reserva);
 
-    } else if (e.target.classList.contains('bi-check-lg')) {
-        let reserva = e.target.parentElement.parentElement.parentElement;
-        borrarReserva(reserva);
-    }
-}
+//     } else if (e.target.classList.contains('bi-check-lg')) {
+//         let reserva = e.target.parentElement.parentElement.parentElement;
+//         // borrarReserva(reserva);
+//     }
 
-function borrarReserva(e) {
-    let resultado = window.confirm('Estas Seguro de que quiere Confirmar la reserva?');
-    if (resultado) {
-        e.classList.add('d-none');
-    }
+//     if (e.target.classList.contains('rechazar')) {
+//         let reserva = e.target.parentElement.parentElement;
+//         // borrarReserva(reserva);
+
+//     } else if (e.target.classList.contains('bi-x-lg')) {
+//         let reserva = e.target.parentElement.parentElement.parentElement;
+//         // borrarReserva(reserva);
+//     }
+// }
 
 
-}
+// function borrarReserva(e) {
+
+//     let datosFechaHora = {
+//         hora: e.querySelector('.hora span').innerHTML,
+//         fecha: e.querySelector('.fecha span').innerHTML,
+//         cancha: e.querySelector('.cancha span').innerHTML
+//     }
+
+//     e.classList.add('d-none');
+//     //Borrar del array
+//     listaReserva.forEach(x => {
+//         if (x.fecha == datosFechaHora.fecha && x.hora == datosFechaHora.hora && x.cancha == datosFechaHora.cancha) {
+//             let item = listaReserva.indexOf(x);
+//             listaReserva.splice(item, 1)
+//             console.log(listaReserva);
+//             // window.location.reload();
+
+
+//         }
+//     })
+
+// }
+
 
 function guardarReservas() {
     reserva.forEach(e => {
@@ -74,12 +97,10 @@ function guardarReservas() {
             nombre: e.querySelector('.nombre span').innerHTML,
             telefono: e.querySelector('.telefono span').innerHTML,
             direccion: e.querySelector('.direccion span').innerHTML,
-            correo: e.querySelector('.correo span').innerHTML
+            correo: e.querySelector('.correo span').innerHTML,
+            id: e.querySelector('.id span').innerHTML
         }
-
-
         listaReserva.push(reservaInfo);
-
     })
     console.log(listaReserva);
 }
@@ -109,12 +130,13 @@ function imprimirHTML(e) {
                 <p class="m-0 py-1 datos telefono"><strong>Telefono: </strong><span>${x.telefono}</span></p>
                 <p class="m-0 py-1 datos direccion"><strong>Direccion: </strong><span>${x.direccion}</span></p>
                 <p class="m-0 py-1 datos correo "><strong>Correo: </strong><span>${x.correo}</span></p>
+                <p class="m-0 py-1 datos id d-none"><strong>Id: </strong><span>${x.id}</span></p>
             </div>
         </div>
 
         <div class="botones col-2 align-items-center d-flex ">
-            <button class="btn btn-success me-3 aceptar"><i class="bi bi-check-lg"></i></button>
-            <button class="btn btn-danger rechazar"><i class="bi bi-x-lg"></i></button>
+        <a href="../../php/trabajadores/aceptarReserva.php?id=${x.id}" class="btn btn-success me-3 aceptar"><i class="bi bi-check-lg"></i></a>
+        <a href="../../php/trabajadores/eliminarReserva.php?id=${x.id}" class="btn btn-danger rechazar"><i class="bi bi-x-lg"></i></a>
         </div>
     </div>
         `;
@@ -125,8 +147,9 @@ function imprimirHTML(e) {
 }
 
 function filtrar() {
-    let filtro = listaReserva.filter(filtrarCancha);
-    console.log(filtro.length);
+
+    let filtro = listaReserva.filter(filtrarCancha).filter(filtrarHora).filter(filtrarFecha);
+
     if (filtro.length) {
         limpiarHTML();
         imprimirHTML(filtro);
@@ -139,9 +162,28 @@ function filtrar() {
 
 function filtrarCancha(e) {
     if (objeto.numero) {
-        return objeto.numero === e.cancha;
+        return objeto.numero == e.cancha;
+
     } else {
-        return e;
+        return listaReserva;
+    }
+}
+
+function filtrarHora(e) {
+    if (objeto.hora) {
+        return objeto.hora == e.hora;
+
+    } else {
+        return listaReserva;
+    }
+}
+
+function filtrarFecha(e) {
+    if (objeto.fecha) {
+        return objeto.fecha == e.fecha;
+
+    } else {
+        return listaReserva;
     }
 }
 
@@ -152,7 +194,7 @@ function limpiarHTML() {
 }
 
 function errorMessage() {
-    
+
     let h1 = document.createElement('div');
     h1.innerHTML = ` <div class='col-12 mt-4'>
                         <h1 class="text-center text-danger">No hay reservaciones para con el filtro seleccionado</h1>

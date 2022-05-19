@@ -1,10 +1,5 @@
 .main{
-    border-radius: 8px;
+   border-radius: 5px;
     
 }
 
-col{
-    height: 400px;
-    width: 800px;
-    background-color: aqua;
-}
