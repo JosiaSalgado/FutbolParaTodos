@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/login.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
     <title>Login</title>
 </head>
 
@@ -16,7 +16,7 @@
             <div class="col">
                 <div class="form">
 
-                    <form action="../../php/clientes/validarLogin.php" method="post" class="p-3">
+                    <form action="" method="post" class="p-3">
                         <h1 class="text-center">BIENVENIDO</h1>
 
                         <div class="px-3">
@@ -28,7 +28,7 @@
 
                                 <p class="ms-1 mb-0  d-block" id="nameMessage">Rellene la casilla</p>  
 
-                                <p class="text-end" id="register"><a href='register.php'>¿Aun no tienes cuenta? Registrate aqui</a></p>
+                                <p class="text-end" id="register"><a href='./vistas/Cliente/register.php'>¿Aun no tienes cuenta? Registrate aqui</a></p>
                             </div>
                         </div>
 
@@ -53,8 +53,8 @@
         </div>
     </div>
 
-    <script src="../../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../../js/login.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/login.js"></script>
 
 </body>
 
